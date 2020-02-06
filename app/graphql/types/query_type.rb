@@ -10,5 +10,7 @@ module Types
     field :my_checkout_history, resolver: MyCheckoutHistoryQuery
     field :my_checked_out_books, resolver: MyCheckedOutBooksQuery
     field :my_favorite_books, resolver: MyFavoriteBooksQuery
+    field :annotation, resolver: AnnotationQuery
+    field :annotations, resolver: AnnotationsQuery
   end
 end
