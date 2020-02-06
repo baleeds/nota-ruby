@@ -1,0 +1,15 @@
+<div>
+    <h1>Welcome to Librarian, <%= @email %></h1>
+    <p>
+      You have successfully signed up to Librarian
+        the site where you can go to the library and be as a
+        loud as you want.
+    </p>
+    <p>
+        To setup your password please <%= link_to_frontend(
+                                      text: 'click here',
+                                      url: "reset?token=#{@token}"
+                                      ) %>
+    </p>
+    <p>We can't wait for you to turn the next page with us!</p>
+</div>

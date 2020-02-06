@@ -1,0 +1,18 @@
+default: &default
+  adapter: redis
+  url: <%= ENV.fetch("REDIS_URL") { "redis://localhost" } %>
+
+development:
+  <<: *default
+  channel_prefix: nota_development
+
+test:
+  adapter: async
+
+staging:
+  <<: *default
+  channel_prefix: nota_staging
+
+production:
+  <<: *default
+  channel_prefix: nota_production
