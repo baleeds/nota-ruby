@@ -1,5 +1,5 @@
 class AnnotationsQuery < Types::BaseResolver
-  description "Gets all the annotations"
+  description "Gets all public annotations"
   # argument :sort_by,
   #   Types::BookSortByType,
   #   "The column to sort the results by",
@@ -14,6 +14,11 @@ class AnnotationsQuery < Types::BaseResolver
   # policy ApplicationPolicy, :logged_in?
 
   def resolve
-    Annotation.all
+    pp current_user
+    if current_user.guest?
+      Annotation.all
+    else
+      Annotation.where.not(user: current_user)
+    end
   end
 end
