@@ -19,5 +19,6 @@ module Types
     field :unfavorite_book, resolver: UnfavoriteBookMutation
     field :invalidate_token, resolver: InvalidateTokenMutation
     field :create_user, resolver: CreateUserMutation
+    field :create_annotation, resolver: CreateAnnotationMutation
   end
 end
