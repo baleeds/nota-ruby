@@ -12,5 +12,6 @@ module Types
     field :my_favorite_books, resolver: MyFavoriteBooksQuery
     field :annotation, resolver: AnnotationQuery
     field :annotations, resolver: AnnotationsQuery
+    field :my_annotations, resolver: MyAnnotationsQuery
   end
 end

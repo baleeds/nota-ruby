@@ -7,7 +7,7 @@ tech = User.create(
   admin: true
 )
 
-User.create(
+bz = User.create(
   email: "development@level.bz",
   password: "Tester12",
   admin: false
@@ -24,8 +24,16 @@ FactoryBot.create_list(
 
 FactoryBot.create_list(
   :annotation,
-  50,
+  10,
   text: Faker::Lorem.paragraph(sentence_count: 10),
   verse_id: "01001001",
   user: tech
+)
+
+FactoryBot.create_list(
+  :annotation,
+  50,
+  text: Faker::Lorem.paragraph(sentence_count: 20),
+  verse_id: "01001001",
+  user: bz
 )

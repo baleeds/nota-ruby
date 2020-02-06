@@ -4,6 +4,7 @@ class User < ApplicationRecord
 
   has_many :favorite_books
   has_many :favorites, through: :favorite_books, source: :book, dependent: :destroy
+  has_many :annotations
 
   has_secure_password
 

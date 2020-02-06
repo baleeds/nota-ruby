@@ -38,7 +38,7 @@ class AccessToken
     end
 
     def expiration
-      3.second.from_now.to_i
+      24.hours.from_now.to_i
     end
   end
 end
