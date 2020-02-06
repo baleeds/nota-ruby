@@ -1,7 +1,7 @@
 require "factory_bot_rails"
 require "faker"
 
-User.create(
+tech = User.create(
   email: "development@level.tech",
   password: "Tester12",
   admin: true
@@ -26,4 +26,6 @@ FactoryBot.create_list(
   :annotation,
   50,
   text: Faker::Lorem.paragraph(sentence_count: 10),
+  verse_id: "01001001",
+  user: tech
 )

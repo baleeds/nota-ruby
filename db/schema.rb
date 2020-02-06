@@ -16,9 +16,12 @@ ActiveRecord::Schema.define(version: 2020_01_30_201335) do
   enable_extension "plpgsql"
 
   create_table "annotations", force: :cascade do |t|
+    t.bigint "user_id", null: false
     t.string "text", null: false
+    t.string "verse_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_annotations_on_user_id"
   end
 
   create_table "books", force: :cascade do |t|
@@ -87,6 +90,7 @@ ActiveRecord::Schema.define(version: 2020_01_30_201335) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "annotations", "users"
   add_foreign_key "books", "rentals"
   add_foreign_key "favorite_books", "books"
   add_foreign_key "favorite_books", "users"
