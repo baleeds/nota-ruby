@@ -7,7 +7,7 @@ module Outputs
     field :verse_id, String, null: false
     field :user, Outputs::UserType, null: false
 
-    def checked_out_by
+    def user
       Loaders::AssociationLoader.for(Annotation, :user).load(@object)
     end
 
