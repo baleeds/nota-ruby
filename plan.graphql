@@ -1,0 +1,40 @@
+fragment AnnotationDetails on Annotaion {
+  id
+  text
+  favorited
+  createdAt
+  user {
+    id
+    username
+  }
+  numberOfReplies
+}
+
+query MyAnnotations($first: Int, $verseId: String) {
+  myAnnotations(first: $first, verseId: $verseId) {
+    edges {
+      node {
+        ...AnnotationDetails
+      }
+    }
+  }
+}
+
+query Annotations($first: Int, $verseId: String) {
+  annotations(first: $first, verseId: $verseId) {
+    edges {
+      node {
+        ...AnnotationDetails
+      }
+    }
+  }
+}
+
+query Verse($verseId: ID!) {
+  verse(verseId: $verseId) {
+    id
+    numberOfAnnotationsByMe
+    numberOfAnnotations
+    favorited
+  }
+}
