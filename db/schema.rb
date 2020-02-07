@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_30_201335) do
+ActiveRecord::Schema.define(version: 2020_02_07_015435) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -70,6 +70,16 @@ ActiveRecord::Schema.define(version: 2020_01_30_201335) do
     t.index ["user_id"], name: "index_reset_password_tokens_on_user_id"
   end
 
+  create_table "user_annotation_favorites", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "annotation_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["annotation_id", "user_id"], name: "index_user_annotation_favorites_on_annotation_id_and_user_id", unique: true
+    t.index ["annotation_id"], name: "index_user_annotation_favorites_on_annotation_id"
+    t.index ["user_id"], name: "index_user_annotation_favorites_on_user_id"
+  end
+
   create_table "user_book_ratings", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "book_id", null: false
@@ -97,6 +107,8 @@ ActiveRecord::Schema.define(version: 2020_01_30_201335) do
   add_foreign_key "rentals", "books"
   add_foreign_key "rentals", "users"
   add_foreign_key "reset_password_tokens", "users"
+  add_foreign_key "user_annotation_favorites", "annotations"
+  add_foreign_key "user_annotation_favorites", "users"
   add_foreign_key "user_book_ratings", "books"
   add_foreign_key "user_book_ratings", "users"
 end
