@@ -20,5 +20,6 @@ module Types
     field :invalidate_token, resolver: InvalidateTokenMutation
     field :create_user, resolver: CreateUserMutation
     field :create_annotation, resolver: CreateAnnotationMutation
+    field :favorite_annotation, resolver: FavoriteAnnotationMutation
   end
 end
