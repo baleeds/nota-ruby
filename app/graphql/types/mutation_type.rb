@@ -21,5 +21,6 @@ module Types
     field :create_user, resolver: CreateUserMutation
     field :create_annotation, resolver: CreateAnnotationMutation
     field :favorite_annotation, resolver: FavoriteAnnotationMutation
+    field :unfavorite_annotation, resolver: UnfavoriteAnnotationMutation
   end
 end
