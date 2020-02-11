@@ -13,5 +13,6 @@ module Types
     field :annotation, resolver: AnnotationQuery
     field :annotations, resolver: AnnotationsQuery
     field :my_annotations, resolver: MyAnnotationsQuery
+    field :verse, resolver: VerseQuery
   end
 end

@@ -1,6 +1,6 @@
 class AnnotationsQuery < Types::BaseResolver
   description "Gets all public annotations"
-  argument :verse_id, String, "Verse ID", required: true
+  argument :verse_id, ID, required: true, loads: Outputs::VerseType
 
   # argument :sort_by,
   #   Types::BookSortByType,
@@ -16,7 +16,7 @@ class AnnotationsQuery < Types::BaseResolver
   type Outputs::AnnotationType.connection_type, null: false
 
   def resolve
-    annotations = Annotation.where(verse_id: input.verse_id)
+    annotations = Annotation.where(verse: input.verse)
     annotations = annotations.where.not(user: current_user) if !current_user.guest?
     annotations
   end

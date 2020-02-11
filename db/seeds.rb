@@ -1,5 +1,6 @@
 require "factory_bot_rails"
 require "faker"
+require "csv"
 
 tech = User.create(
   email: "development@level.tech",
@@ -11,15 +12,6 @@ bz = User.create(
   email: "development@level.bz",
   password: "Tester12",
   admin: false
-)
-
-FactoryBot.create_list(
-  :book,
-  50,
-  authors: Faker::Book.author,
-  description: Faker::Lorem.paragraph(sentence_count: 10),
-  image_url: "http://books.google.com/books/content?id=iXn5U2IzVH0C&printsec=frontcover&img=1&zoom=1&edge=none&source=gbs_api",
-  page_count: rand(100..300)
 )
 
 FactoryBot.create_list(
@@ -37,3 +29,16 @@ FactoryBot.create_list(
   verse_id: "01001001",
   user: bz
 )
+
+
+csv_text = File.read(Rails.root.join('db', 'assets', 't_web.csv'))
+csv = CSV.parse(csv_text, :headers => true, :encoding => 'ISO-8859-1')
+csv.each do |row|
+  t = Verse.new
+  t.id = row['id']
+  t.book_number = row['b']
+  t.chapter_number = row['c']
+  t.verse_number = row['v']
+  t.text = row['t']
+  t.save
+end

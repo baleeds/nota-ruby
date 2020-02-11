@@ -4,7 +4,6 @@ module Outputs
 
     global_id_field :id
     field :text, String, null: false
-    field :verse_id, String, null: false
     field :user, Outputs::UserType, null: false
     field :favorited, Boolean, null: false
 
