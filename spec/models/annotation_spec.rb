@@ -9,7 +9,8 @@ RSpec.describe Annotation, type: :model do
 
   describe ".favorite_for_user" do
     it "returns annotations favorited by that user" do
-      annotation = create(:annotation)
+      verse = create(:verse, id: "99001001")
+      annotation = create(:annotation, verse: verse)
       user = create(:user)
 
       create(:user_annotation_favorite, annotation: annotation, user: user)

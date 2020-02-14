@@ -6,14 +6,23 @@ class NotaSchema < GraphQL::Schema
 
   class << self
     def id_from_object(object, type_definition, query_ctx)
-      GraphQL::Schema::UniqueWithinType.encode(type_definition.name, object.id)
+      if type_definition.name == "Verse"
+        "verse" + object.id
+      else
+        GraphQL::Schema::UniqueWithinType.encode(type_definition.name, object.id)
+      end
     end
 
     def object_from_id(id, query_ctx)
       return record_not_found_error if id.empty?
 
-      type_name, item_id = decode_global_id(id)
-      "Outputs::#{type_name}Type".constantize.loads(item_id)
+      if id.include? "verse"
+        "Outputs::VerseType".constantize.loads(id[5..-1])
+      else
+        type_name, item_id = decode_global_id(id)
+        "Outputs::#{type_name}Type".constantize.loads(item_id)
+      end
+
     rescue ::ActiveRecord::RecordNotFound
       record_not_found_error
     end
