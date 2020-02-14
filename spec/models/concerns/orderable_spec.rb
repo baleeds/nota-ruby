@@ -1,31 +1,22 @@
 require "rails_helper"
 
 RSpec.describe "Ordering model", type: :model do
-  class Book < ApplicationRecord
+  class Annotation < ApplicationRecord
     include Orderable
 
-    scope :order_by_title, ->(direction) {
-      order(title: direction)
+    scope :order_by_text, ->(direction) {
+      order(text: direction)
     }
   end
 
   describe ".order_by" do
     it "orders by a scope" do
-      second_record = create(:book, title: "b")
-      third_record = create(:book, title: "c")
-      first_record = create(:book, title: "a")
+      verse = create(:verse, id: '1001001')
+      second_record = create(:annotation, text: "b", verse: verse)
+      third_record = create(:annotation, text: "c", verse: verse)
+      first_record = create(:annotation, text: "a", verse: verse)
 
-      ordered = Book.order_by(:title, :asc)
-
-      expect(ordered).to eq([first_record, second_record, third_record])
-    end
-
-    it "falls through to a column if the scope does not exist" do
-      second_record = create(:book, authors: "b")
-      first_record = create(:book, authors: "a")
-      third_record = create(:book, authors: "c")
-
-      ordered = Book.order_by(:authors, :asc)
+      ordered = Annotation.order_by(:text, :asc)
 
       expect(ordered).to eq([first_record, second_record, third_record])
     end
