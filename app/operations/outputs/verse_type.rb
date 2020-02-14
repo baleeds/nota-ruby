@@ -4,13 +4,13 @@ module Outputs
     
     global_id_field :id
     field :number_of_annotations, Integer, null: true
-    field :number_of_annotations_for_user, Integer, null: true
+    field :number_of_my_annotations, Integer, null: true
 
     def number_of_annotations
       @object.number_of_annotations
     end
 
-    def number_of_annotations_for_user
+    def number_of_my_annotations
       @object.number_of_annotations_for_user(context[:current_user])
     end
 

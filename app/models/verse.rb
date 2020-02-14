@@ -11,7 +11,6 @@ class Verse < ApplicationRecord
   end
 
   def number_of_annotations_for_user(user)
-    pp user
     if user
       annotations.where(user: user).length
     else
