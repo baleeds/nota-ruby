@@ -14,22 +14,6 @@ bz = User.create(
   admin: false
 )
 
-FactoryBot.create_list(
-  :annotation,
-  10,
-  text: Faker::Lorem.paragraph(sentence_count: 10),
-  verse_id: "01001001",
-  user: tech
-)
-
-FactoryBot.create_list(
-  :annotation,
-  50,
-  text: Faker::Lorem.paragraph(sentence_count: 20),
-  verse_id: "01001001",
-  user: bz
-)
-
 
 csv_text = File.read(Rails.root.join('db', 'assets', 't_web.csv'))
 csv = CSV.parse(csv_text, :headers => true, :encoding => 'ISO-8859-1')
@@ -42,3 +26,22 @@ csv.each do |row|
   t.text = row['t']
   t.save
 end
+
+verse = Verse.first
+
+FactoryBot.create_list(
+  :annotation,
+  10,
+  text: Faker::Lorem.paragraph(sentence_count: 10),
+  verse: verse,
+  user: tech
+)
+
+FactoryBot.create_list(
+  :annotation,
+  50,
+  text: Faker::Lorem.paragraph(sentence_count: 20),
+  verse: verse,
+  user: bz
+)
+
