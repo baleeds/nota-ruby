@@ -2,8 +2,6 @@ class User < ApplicationRecord
   validates :email, presence: true, uniqueness: true
   validates :password, length: {minimum: 8}, allow_nil: true
 
-  has_many :favorite_books
-  has_many :favorites, through: :favorite_books, source: :book, dependent: :destroy
   has_many :annotations
 
   has_secure_password
