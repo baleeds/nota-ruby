@@ -27,7 +27,7 @@ csv.each do |row|
   t.save
 end
 
-verse = Verse.first
+verse = Verse.find("1001001");
 
 FactoryBot.create_list(
   :annotation,
