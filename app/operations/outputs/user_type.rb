@@ -6,6 +6,8 @@ module Outputs
     field :email, String, null: false
     field :is_active, Boolean, null: false
     field :is_admin, Boolean, null: false
+    field :username, String, null: false
+    field :display_name, String, null: false
 
     def self.loads(id)
       User.find(id)
