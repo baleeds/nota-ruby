@@ -3,6 +3,8 @@ class CreateUserMutation < Types::BaseMutation
 
   argument :email, String, required: true
   argument :is_admin, Boolean, required: true, as: :admin
+  argument :username, String, required: true
+  argument :display_name, String, required: true
 
   field :user, Outputs::UserType, null: true
   field :errors, function: Resolvers::Error.new

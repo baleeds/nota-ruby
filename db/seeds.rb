@@ -2,15 +2,19 @@ require "factory_bot_rails"
 require "faker"
 require "csv"
 
-tech = User.create(
-  email: "development@level.tech",
+ben = User.create(
+  email: "ben@gmail.com",
   password: "Tester12",
+  username: "ben.leeds",
+  display_name: "Ben Leeds",
   admin: true
 )
 
-bz = User.create(
-  email: "development@level.bz",
+erica= User.create(
+  email: "erica@gmail.com",
   password: "Tester12",
+  username: "erica.leeds",
+  display_name: "Erica Leeds",
   admin: false
 )
 
@@ -34,7 +38,7 @@ FactoryBot.create_list(
   10,
   text: Faker::Lorem.paragraph(sentence_count: 10),
   verse: verse,
-  user: tech
+  user: ben
 )
 
 FactoryBot.create_list(
@@ -42,6 +46,6 @@ FactoryBot.create_list(
   50,
   text: Faker::Lorem.paragraph(sentence_count: 20),
   verse: verse,
-  user: bz
+  user: erica
 )
 

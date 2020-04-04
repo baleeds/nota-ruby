@@ -1,12 +1,14 @@
 class CreateUser
-  def initialize(email:, password: SecureRandom.base64(10), admin: false)
+  def initialize(email:, username:, display_name:, password: SecureRandom.base64(10), admin: false)
     @email = email
     @password = password
     @admin = admin
+    @username = username
+    @display_name = display_name
   end
 
   def call
-    user = User.new(email: email, password: password, admin: admin)
+    user = User.new(email: email, display_name: display_name, username: username, password: password, admin: admin)
 
     if user.save
       welcome_user(user)
@@ -17,7 +19,7 @@ class CreateUser
 
   private
 
-  attr_reader :email, :password, :admin
+  attr_reader :email, :password, :admin, :username, :display_name
 
   def welcome_user(user)
     token = CreateResetPasswordToken.new(user).call.token

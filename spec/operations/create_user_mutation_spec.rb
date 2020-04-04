@@ -18,6 +18,8 @@ describe "Create User Mutation API", :graphql do
     it "allows an admin to add a user" do
       user_input = {
         email: "foobar@baz.qux",
+        username: "foobar",
+        displayName: "Foo Bar",
         isAdmin: false,
       }
 
@@ -31,6 +33,8 @@ describe "Create User Mutation API", :graphql do
     it "allows an admin to add another admin" do
       user_input = {
         email: "foobar@baz.qux",
+        username: "foobar",
+        displayName: "Foo Bar",
         isAdmin: true,
       }
 

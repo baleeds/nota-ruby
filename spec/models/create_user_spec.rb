@@ -6,7 +6,7 @@ RSpec.describe CreateUser do
       create(:user, :admin)
       email = "foo@bar.baz"
 
-      result = described_class.new(email: email).call
+      result = described_class.new(email: email, username: "guy", display_name: "Sir Guy").call
 
       expect(result.success?).to be(true)
       expect(User.count).to eq(2)
@@ -16,18 +16,17 @@ RSpec.describe CreateUser do
       create(:user, :admin)
       email = "foo@bar.baz"
 
-      result = described_class.new(email: email, admin: true).call
+      result = described_class.new(email: email, username: "guy", display_name: "Sir Guy", admin: true).call
 
       expect(result.success?).to be(true)
       expect(User.where(admin: true).count).to eq(2)
     end
 
     it "sends a welcome email" do
-      create(:user, :admin)
       email = "foo@bar.baz"
 
       result = perform_enqueued_jobs {
-        described_class.new(email: email).call
+        described_class.new(email: email, username: "guy", display_name: "Sir Guy").call
       }
 
       delivery = ActionMailer::Base.deliveries.last
@@ -39,7 +38,7 @@ RSpec.describe CreateUser do
       email = "bravesirrobbin@camelot.com"
       password = "2short"
 
-      result = described_class.new(email: email, password: password).call
+      result = described_class.new(email: email, username: "guy", display_name: "Sir Guy", password: password).call
 
       expect(result.success?).to be(false)
       expect(User.count).to eq(0)
