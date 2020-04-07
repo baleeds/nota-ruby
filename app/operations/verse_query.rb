@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class VerseQuery < Types::BaseResolver
-  description "Get an annotation"
+  description 'Get an annotation'
   type Outputs::VerseType, null: false
   argument :verse_id, ID, required: true, loads: Outputs::VerseType
 

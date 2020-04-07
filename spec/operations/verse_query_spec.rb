@@ -1,5 +1,7 @@
-describe "Verse Query", :graphql do
-  describe "basic query" do
+# frozen_string_literal: true
+
+describe 'Verse Query', :graphql do
+  describe 'basic query' do
     query =
       <<-'GRAPHQL'
         query($verseId: ID!) {
@@ -9,19 +11,19 @@ describe "Verse Query", :graphql do
         }
       GRAPHQL
 
-    it "returns the specified verse" do
+    it 'returns the specified verse' do
       verse = create(:verse)
-      verse_id = "verse" + verse.id
+      verse_id = 'verse' + verse.id
 
       result = execute query, as: build(:user), variables: {
-        verseId: verse_id,
+        verseId: verse_id
       }
 
       expect(result[:data][:verse]).to include(id: verse_id)
     end
   end
 
-  describe "numberOfAnnotations field" do
+  describe 'numberOfAnnotations field' do
     query =
       <<-'GRAPHQL'
         query($verseId: ID!) {
@@ -32,9 +34,9 @@ describe "Verse Query", :graphql do
         }
       GRAPHQL
 
-    it "returns the correct number of annotations" do
+    it 'returns the correct number of annotations' do
       verse = create(:verse)
-      verse_id = "verse" + verse.id
+      verse_id = 'verse' + verse.id
       create(:annotation, verse: verse)
       create(:annotation, verse: verse)
 
@@ -46,7 +48,7 @@ describe "Verse Query", :graphql do
     end
   end
 
-  describe "numberOfMyAnnotations" do
+  describe 'numberOfMyAnnotations' do
     query =
       <<-'GRAPHQL'
         query($verseId: ID!) {
@@ -57,9 +59,9 @@ describe "Verse Query", :graphql do
         }
       GRAPHQL
 
-    it "returns the correct number of my annotations" do
+    it 'returns the correct number of my annotations' do
       verse = create(:verse)
-      verse_id = "verse" + verse.id
+      verse_id = 'verse' + verse.id
       user = create(:user)
       create(:annotation, verse: verse, user: user)
       create(:annotation, verse: verse, user: user)

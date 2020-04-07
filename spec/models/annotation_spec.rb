@@ -1,15 +1,17 @@
-require "rails_helper"
+# frozen_string_literal: true
+
+require 'rails_helper'
 
 RSpec.describe Annotation, type: :model do
-  describe "validation" do
-    it "passes with valid attributes" do
+  describe 'validation' do
+    it 'passes with valid attributes' do
       expect(build_stubbed(:annotation)).to be_valid
     end
   end
 
-  describe ".favorite_for_user" do
-    it "returns annotations favorited by that user" do
-      verse = create(:verse, id: "99001001")
+  describe '.favorite_for_user' do
+    it 'returns annotations favorited by that user' do
+      verse = create(:verse, id: '99001001')
       annotation = create(:annotation, verse: verse)
       user = create(:user)
 
@@ -24,8 +26,8 @@ RSpec.describe Annotation, type: :model do
     end
   end
 
-  describe "#favorited?" do
-    it "returns true when a annotation is favorited" do
+  describe '#favorited?' do
+    it 'returns true when a annotation is favorited' do
       annotation = create(:annotation)
       user = create(:user)
       create(:user_annotation_favorite, user: user, annotation: annotation)
@@ -35,7 +37,7 @@ RSpec.describe Annotation, type: :model do
       expect(result).to be(true)
     end
 
-    it "returns false when a annotation is favorited" do
+    it 'returns false when a annotation is favorited' do
       annotation = create(:annotation)
       user = create(:user)
 

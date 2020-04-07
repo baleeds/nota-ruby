@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class TokenAuthentication
   attr_reader :token_string
 

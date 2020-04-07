@@ -1,16 +1,18 @@
-require "rails_helper"
+# frozen_string_literal: true
 
-RSpec.describe "Graphql API", :graphql, type: :request do
-  describe "POST #execute" do
-    context "with no query" do
-      it "successfully executes" do
-        post graphql_url, params: {query: ""}
+require 'rails_helper'
+
+RSpec.describe 'Graphql API', :graphql, type: :request do
+  describe 'POST #execute' do
+    context 'with no query' do
+      it 'successfully executes' do
+        post graphql_url, params: { query: '' }
 
         expect(response).to have_http_status(:ok)
         expect(json_response).to be_empty
       end
 
-      context "with a query" do
+      context 'with a query' do
         let(:query) do
           <<-'GRAPHQL'
             query {
@@ -21,44 +23,44 @@ RSpec.describe "Graphql API", :graphql, type: :request do
           GRAPHQL
         end
 
-        it "successfully executes with an authenticated user" do
+        it 'successfully executes with an authenticated user' do
           user = create(:user)
 
           post graphql_url,
-            params: {
-              query: query,
-            },
-            headers: {
-              authorization: token_string(user),
-            }
+               params: {
+                 query: query
+               },
+               headers: {
+                 authorization: token_string(user)
+               }
 
           expect(response).to have_http_status(:ok)
-          expect(json_response).to eq({
+          expect(json_response).to eq(
             data: {
               me: {
-                id: global_id(user, Outputs::UserType),
-              },
-            },
-          })
+                id: global_id(user, Outputs::UserType)
+              }
+            }
+          )
         end
 
-        it "returns an UNAUTHENTICATED code with an invalid user" do
+        it 'returns an UNAUTHENTICATED code with an invalid user' do
           post graphql_url,
-            params: {
-              query: query,
-            },
-            headers: {
-              authorization: "invalid-token",
-            }
+               params: {
+                 query: query
+               },
+               headers: {
+                 authorization: 'invalid-token'
+               }
 
           expect(response).to have_http_status(:ok)
           expect(json_response).to include(
             errors: [
               a_hash_including(
                 extensions: {
-                  code: "UNAUTHENTICATED",
+                  code: 'UNAUTHENTICATED'
                 }
-              ),
+              )
             ]
           )
         end
@@ -72,7 +74,7 @@ RSpec.describe "Graphql API", :graphql, type: :request do
 
   def token_string(user)
     JWT.encode(
-      {email: user.email},
+      { email: user.email },
       AccessToken::SECRET, AccessToken::ALGORITHM
     )
   end

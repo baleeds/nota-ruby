@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class MeQuery < Types::BaseResolver
-  description "Returns the currently logged in user"
+  description 'Returns the currently logged in user'
   type Outputs::UserType, null: true
   policy ApplicationPolicy, :logged_in?
 

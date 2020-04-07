@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ResetPassword
   def initialize(token_body:, password:)
     @token_body = token_body
@@ -10,7 +12,7 @@ class ResetPassword
     if reset_token
       use_token(reset_token)
     else
-      Result.failure("Password reset is expired or invalid")
+      Result.failure('Password reset is expired or invalid')
     end
   end
 

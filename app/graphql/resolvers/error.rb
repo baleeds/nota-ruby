@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 module Resolvers
   class Error < GraphQL::Function
     type types[Types::ErrorType]
-    description "Validation error"
+    description 'Validation error'
 
     def call(obj, _args, _ctx)
       map_errors(obj[:errors])
@@ -12,9 +14,9 @@ module Resolvers
     def map_errors(errors)
       case errors
       when ActiveModel::Errors
-        errors.map { |field, message| {field: field, message: message} }
+        errors.map { |field, message| { field: field, message: message } }
       else
-        errors.map { |error| {field: :base, message: error} }
+        errors.map { |error| { field: :base, message: error } }
       end
     end
   end

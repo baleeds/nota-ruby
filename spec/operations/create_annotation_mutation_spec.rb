@@ -1,6 +1,8 @@
-require "rails_helper"
+# frozen_string_literal: true
 
-describe "Create annotation mutation", :graphql do
+require 'rails_helper'
+
+describe 'Create annotation mutation', :graphql do
   let(:query) do
     <<~'GRAPHQL'
       mutation($input: CreateAnnotationInput!){
@@ -18,16 +20,16 @@ describe "Create annotation mutation", :graphql do
     GRAPHQL
   end
 
-  it "can successfully create" do
+  it 'can successfully create' do
     user = create(:user)
-    create(:verse, id: "1001001")
-          
+    create(:verse, id: '1001001')
+
     annotation_input = {
-      verseId: "verse1001001",
-      text: "Test",
+      verseId: 'verse1001001',
+      text: 'Test'
     }
 
-    result = execute query, as: user, variables: {input: {annotationInput: annotation_input} }
+    result = execute query, as: user, variables: { input: { annotationInput: annotation_input } }
 
     annotation = result[:data][:createAnnotation][:annotation]
     expect(annotation[:text]).to eq(annotation_input[:text])

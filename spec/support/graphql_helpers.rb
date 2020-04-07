@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module GraphQLHelpers
   def execute(query, as: Guest.new, context: {}, variables: {})
     context[:current_user] = as unless context.key?(:current_user)

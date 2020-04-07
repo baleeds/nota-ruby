@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class UnsuspendUserMutation < Types::BaseMutation
-  description "Unsuspend a user"
+  description 'Unsuspend a user'
 
   argument :user_id, ID, required: true, loads: Outputs::UserType
 
@@ -12,9 +14,9 @@ class UnsuspendUserMutation < Types::BaseMutation
     user = input.user
 
     if user.unsuspend
-      {user: user, errors: []}
+      { user: user, errors: [] }
     else
-      {user: nil, errors: user.errors}
+      { user: nil, errors: user.errors }
     end
   end
 end

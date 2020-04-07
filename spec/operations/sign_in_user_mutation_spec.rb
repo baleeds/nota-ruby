@@ -1,7 +1,9 @@
-require "rails_helper"
+# frozen_string_literal: true
 
-describe "Sign In User Mutation API", :graphql do
-  describe "signInUser" do
+require 'rails_helper'
+
+describe 'Sign In User Mutation API', :graphql do
+  describe 'signInUser' do
     let(:query) do
       <<~'GRAPHQL'
         mutation($input: SignInUserInput!) {
@@ -20,14 +22,14 @@ describe "Sign In User Mutation API", :graphql do
       GRAPHQL
     end
 
-    it "issues new access and refresh tokens" do
-      user = create(:user, password: "tester12")
+    it 'issues new access and refresh tokens' do
+      user = create(:user, password: 'tester12')
 
       result = execute query, variables: {
         input: {
           email: user.email,
-          password: "tester12",
-        },
+          password: 'tester12'
+        }
       }
 
       sign_in_user = result[:data][:signInUser]
@@ -37,14 +39,14 @@ describe "Sign In User Mutation API", :graphql do
       expect(sign_in_user[:refreshToken]).not_to be_nil
     end
 
-    it "does not authenticate with invalid email" do
-      create(:user, password: "tester12")
+    it 'does not authenticate with invalid email' do
+      create(:user, password: 'tester12')
 
       result = execute query, variables: {
         input: {
-          email: "invalid@email.com",
-          password: "tester12",
-        },
+          email: 'invalid@email.com',
+          password: 'tester12'
+        }
       }
 
       response = result[:data][:signInUser]
@@ -53,14 +55,14 @@ describe "Sign In User Mutation API", :graphql do
       expect(response[:token]).to be_nil
     end
 
-    it "does not authenticate with invalid password" do
-      user = create(:user, password: "tester12")
+    it 'does not authenticate with invalid password' do
+      user = create(:user, password: 'tester12')
 
       result = execute query, variables: {
         input: {
           email: user.email,
-          password: "not_tester",
-        },
+          password: 'not_tester'
+        }
       }
 
       response = result[:data][:signInUser]

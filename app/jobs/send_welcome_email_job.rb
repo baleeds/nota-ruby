@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class SendWelcomeEmailJob < ApplicationJob
   queue_as :default
 

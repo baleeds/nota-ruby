@@ -1,7 +1,9 @@
-require "rails_helper"
+# frozen_string_literal: true
 
-describe "Invalidate Token Mutation API", :graphql do
-  describe "invalidateToken" do
+require 'rails_helper'
+
+describe 'Invalidate Token Mutation API', :graphql do
+  describe 'invalidateToken' do
     let(:query) do
       <<~'GRAPHQL'
         mutation($input: InvalidateTokenInput!) {
@@ -16,7 +18,7 @@ describe "Invalidate Token Mutation API", :graphql do
       user = create(:user)
 
       result = execute query, as: build(:user, :admin),
-                              variables: {input: {userId: global_id(user, Outputs::UserType)}}
+                              variables: { input: { userId: global_id(user, Outputs::UserType) } }
 
       result = result[:data][:invalidateToken][:success]
 

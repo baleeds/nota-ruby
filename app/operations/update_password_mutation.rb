@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class UpdatePasswordMutation < Types::BaseMutation
-  description "Updates the password of the current user"
+  description 'Updates the password of the current user'
 
   argument :current_password, String, required: true
   argument :new_password, String, required: true
@@ -11,9 +13,9 @@ class UpdatePasswordMutation < Types::BaseMutation
 
   def authorized_resolve
     if current_user.update_password(current: input.current_password, new: input.new_password)
-      {user: current_user, errors: []}
+      { user: current_user, errors: [] }
     else
-      {user: nil, errors: ["Password failed to update"]}
+      { user: nil, errors: ['Password failed to update'] }
     end
   end
 end

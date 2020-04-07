@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CreateVerses < ActiveRecord::Migration[6.0]
   def change
     create_table :verses, id: false do |t|

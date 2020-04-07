@@ -1,20 +1,22 @@
-require "rails_helper"
+# frozen_string_literal: true
 
-RSpec.describe "Ordering model", type: :model do
+require 'rails_helper'
+
+RSpec.describe 'Ordering model', type: :model do
   class Annotation < ApplicationRecord
     include Orderable
 
-    scope :order_by_text, ->(direction) {
+    scope :order_by_text, lambda { |direction|
       order(text: direction)
     }
   end
 
-  describe ".order_by" do
-    it "orders by a scope" do
+  describe '.order_by' do
+    it 'orders by a scope' do
       verse = create(:verse, id: '1001001')
-      second_record = create(:annotation, text: "b", verse: verse)
-      third_record = create(:annotation, text: "c", verse: verse)
-      first_record = create(:annotation, text: "a", verse: verse)
+      second_record = create(:annotation, text: 'b', verse: verse)
+      third_record = create(:annotation, text: 'c', verse: verse)
+      first_record = create(:annotation, text: 'a', verse: verse)
 
       ordered = Annotation.order_by(:text, :asc)
 

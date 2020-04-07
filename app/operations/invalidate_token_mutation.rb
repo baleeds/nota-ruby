@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class InvalidateTokenMutation < Types::BaseMutation
   description "Invalidates a user's token"
 
@@ -12,13 +14,13 @@ class InvalidateTokenMutation < Types::BaseMutation
     return cannot_invalidate_self_error if input.user == current_user
 
     if input.user.increment(:token_version)
-      {success: true, errors: []}
+      { success: true, errors: [] }
     else
-      {user: nil, errors: user.errors}
+      { user: nil, errors: user.errors }
     end
   end
 
   def cannot_invalidate_self_error
-    {user: nil, errors: ["You cannot invalidate your own token"]}
+    { user: nil, errors: ['You cannot invalidate your own token'] }
   end
 end

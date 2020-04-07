@@ -1,12 +1,14 @@
-require "rails_helper"
+# frozen_string_literal: true
+
+require 'rails_helper'
 
 RSpec.describe Verse, type: :model do
-  describe "#number_of_annotations" do
-    it "returns the correct number" do
+  describe '#number_of_annotations' do
+    it 'returns the correct number' do
       verse = create(:verse)
       user = create(:user)
       second_user = create(:user)
-      
+
       create(:annotation, verse: verse, user: user)
       create(:annotation, verse: verse, user: user)
       create(:annotation, verse: verse, user: second_user)

@@ -1,8 +1,10 @@
-require "rails_helper"
+# frozen_string_literal: true
+
+require 'rails_helper'
 
 RSpec.describe SendWelcomeEmailJob, type: :job do
-  describe "#perform" do
-    it "sends a welcome email to the specified user" do
+  describe '#perform' do
+    it 'sends a welcome email to the specified user' do
       user = create(:user)
       token = create(:reset_password_token, user: user)
 

@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class UnfavoriteAnnotationMutation < Types::BaseMutation
-  description "Unfavorites an annotation"
+  description 'Unfavorites an annotation'
 
   argument :annotation_id, ID, required: true, loads: Outputs::AnnotationType
 
@@ -12,6 +14,6 @@ class UnfavoriteAnnotationMutation < Types::BaseMutation
     user_annotation_favorite = UserAnnotationFavorite.find_by!(user: current_user, annotation: input.annotation)
     user_annotation_favorite.destroy
 
-    {success: user_annotation_favorite.destroyed?, errors: user_annotation_favorite.errors}
+    { success: user_annotation_favorite.destroyed?, errors: user_annotation_favorite.errors }
   end
 end

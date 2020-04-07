@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Outputs
   class AnnotationType < Types::BaseObject
     implements Types::ActiveRecord

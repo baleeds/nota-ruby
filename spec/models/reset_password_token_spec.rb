@@ -1,12 +1,14 @@
-require "rails_helper"
+# frozen_string_literal: true
+
+require 'rails_helper'
 
 RSpec.describe ResetPasswordToken, type: :model do
-  context "validations" do
-    it "is valid with valid attributes" do
+  context 'validations' do
+    it 'is valid with valid attributes' do
       expect(build(:reset_password_token)).to be_valid
     end
 
-    it "is not valid if token is not unique" do
+    it 'is not valid if token is not unique' do
       reset_password_token = create(:reset_password_token)
       another_reset_password_token = build(:reset_password_token, body: reset_password_token.body)
 
@@ -14,8 +16,8 @@ RSpec.describe ResetPasswordToken, type: :model do
     end
   end
 
-  describe ".active" do
-    it "can find active tokens" do
+  describe '.active' do
+    it 'can find active tokens' do
       token = create(:reset_password_token, :active)
 
       found_token = described_class.active.first
@@ -23,7 +25,7 @@ RSpec.describe ResetPasswordToken, type: :model do
       expect(found_token).to eq(token)
     end
 
-    it "does not find expired tokens" do
+    it 'does not find expired tokens' do
       create(:reset_password_token, :expired)
 
       found_token = described_class.active.first
@@ -31,7 +33,7 @@ RSpec.describe ResetPasswordToken, type: :model do
       expect(found_token).to be(nil)
     end
 
-    it "does not find used tokens" do
+    it 'does not find used tokens' do
       create(:reset_password_token, :active, used: true)
 
       found_token = described_class.active.first
@@ -40,8 +42,8 @@ RSpec.describe ResetPasswordToken, type: :model do
     end
   end
 
-  describe ".find_active" do
-    it "returns a token from body" do
+  describe '.find_active' do
+    it 'returns a token from body' do
       user = create(:user)
       reset_password_token = create(:reset_password_token, :active, user: user)
 
@@ -50,7 +52,7 @@ RSpec.describe ResetPasswordToken, type: :model do
       expect(result).to eq(reset_password_token)
     end
 
-    it "does not return a non-active token" do
+    it 'does not return a non-active token' do
       user = create(:user)
       reset_password_token = create(:reset_password_token, :expired, user: user)
 
@@ -60,8 +62,8 @@ RSpec.describe ResetPasswordToken, type: :model do
     end
   end
 
-  describe "#use" do
-    it "sets used to true" do
+  describe '#use' do
+    it 'sets used to true' do
       token = build(:reset_password_token, used: false)
 
       result = token.use
