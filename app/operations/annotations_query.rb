@@ -9,12 +9,13 @@ class AnnotationsQuery < Types::BaseResolver
 
   def resolve
     annotations = Annotation.all
-    if input.to_h.key?('verse')
-      annotations = annotations.where(verse: input.verse)
-    end
+
+    annotations = annotations.where(verse: input.verse) if input.verse.present?
+
     unless current_user.guest?
       annotations = annotations.where.not(user: current_user)
     end
+
     annotations
   end
 end
