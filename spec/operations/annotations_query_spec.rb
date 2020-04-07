@@ -34,11 +34,12 @@ describe 'Annotations query', :graphql do
     annotation_id = global_id(annotation, Outputs::AnnotationType)
 
     result = execute query, variables: {
-      verse_id: 'verse1001001'
+      verseId: 'verse1001002'
     }
 
     annotations_result = result[:data][:annotations][:edges].pluck(:node)
     expect(annotations_result).to include(id: annotation_id)
+    expect(annotations_result.count).to eq 1
   end
 
   it 'excludes private annotations for logged in user' do
@@ -51,11 +52,33 @@ describe 'Annotations query', :graphql do
     public_annotation_id = global_id(public_annotation, Outputs::AnnotationType)
 
     result = execute query, as: me, variables: {
-      verse_id: 'verse1001001'
+      verseId: 'verse1001001'
     }
 
     annotations_result = result[:data][:annotations][:edges].pluck(:node)
     expect(annotations_result).not_to include(id: annotation_id)
     expect(annotations_result).to include(id: public_annotation_id)
   end
+
+  # TODO: fix broken test
+  # it 'returns annotations for a user' do
+  #   verse = create(:verse)
+
+  #   annotation = create(:annotation, verse: verse, user: create(:user))
+  #   annotation_id = global_id(annotation, Outputs::AnnotationType)
+
+  #   user = create(:user)
+  #   user_annotation = create(:annotation, verse: verse, user: user)
+  #   user_id = global_id(user, Outputs::UserType)
+  #   user_annotation_id = global_id(user_annotation, Outputs::AnnotationType)
+
+  #   result = execute query, variables: {
+  #     verseId: 'verse1001001',
+  #     userId: user_id
+  #   }
+
+  #   annotations_result = result[:data][:annotations][:edges].pluck(:node)
+  #   expect(annotations_result).to include(id: user_annotation_id)
+  #   expect(annotations_result).not_to include(id: annotation_id)
+  # end
 end
