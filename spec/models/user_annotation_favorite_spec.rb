@@ -1,11 +1,13 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe UserAnnotationFavorite, type: :model do
-  it "is valid with valid attributes" do
+  it 'is valid with valid attributes' do
     expect(build_stubbed(:user_annotation_favorite)).to be_valid
   end
 
-  it "validates uniqueness of favorite annotation" do
+  it 'validates uniqueness of favorite annotation' do
     user = create(:user)
     annotation = create(:annotation)
     create(:user_annotation_favorite, user: user, annotation: annotation)

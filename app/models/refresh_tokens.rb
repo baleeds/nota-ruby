@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class RefreshTokens
   def initialize(token_string)
     @token_string = token_string
@@ -14,7 +16,7 @@ class RefreshTokens
         refresh_token: RefreshToken.issue(user)
       )
     else
-      Result.failure(["Invalid refresh token"])
+      Result.failure(['Invalid refresh token'])
     end
   end
 

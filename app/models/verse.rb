@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Verse < ApplicationRecord
   validates :book_number, presence: true
   validates :chapter_number, presence: true

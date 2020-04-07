@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class UsersQuery < Types::BaseResolver
-  description "Get all users"
+  description 'Get all users'
   type Outputs::UserType.connection_type, null: false
   policy ApplicationPolicy, :logged_in?
 

@@ -1,7 +1,9 @@
-require "rails_helper"
+# frozen_string_literal: true
 
-describe "Update Password Mutation API", :graphql do
-  describe "updatePassword" do
+require 'rails_helper'
+
+describe 'Update Password Mutation API', :graphql do
+  describe 'updatePassword' do
     let(:query) do
       <<~'GRAPHQL'
         mutation($input: UpdatePasswordInput!) {
@@ -17,15 +19,15 @@ describe "Update Password Mutation API", :graphql do
       GRAPHQL
     end
 
-    it "updates a users password if the current password is correct" do
-      user = create(:user, password: "current_password")
+    it 'updates a users password if the current password is correct' do
+      user = create(:user, password: 'current_password')
       original_password = user.password_digest
 
       result = execute query, as: user, variables: {
         input: {
-          currentPassword: "current_password",
-          newPassword: "new_password",
-        },
+          currentPassword: 'current_password',
+          newPassword: 'new_password'
+        }
       }
 
       expect(result[:data][:updatePassword][:errors]).to be_empty

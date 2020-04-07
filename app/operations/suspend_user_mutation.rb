@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class SuspendUserMutation < Types::BaseMutation
-  description "Suspend a user"
+  description 'Suspend a user'
 
   argument :user_id, ID, required: true, loads: Outputs::UserType
 
@@ -10,16 +12,17 @@ class SuspendUserMutation < Types::BaseMutation
 
   def authorized_resolve
     return cannot_suspend_self_error if input.user == current_user
+
     user = input.user
 
     if user.suspend
-      {user: user, errors: []}
+      { user: user, errors: [] }
     else
-      {user: nil, errors: user.errors}
+      { user: nil, errors: user.errors }
     end
   end
 
   def cannot_suspend_self_error
-    {user: nil, errors: ["You cannot suspend yourself"]}
+    { user: nil, errors: ['You cannot suspend yourself'] }
   end
 end

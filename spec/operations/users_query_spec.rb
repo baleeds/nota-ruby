@@ -1,7 +1,9 @@
-require "rails_helper"
+# frozen_string_literal: true
 
-describe "Users Query", :graphql do
-  describe "users" do
+require 'rails_helper'
+
+describe 'Users Query', :graphql do
+  describe 'users' do
     let(:query) do
       <<-'GRAPHQL'
         query {
@@ -16,8 +18,8 @@ describe "Users Query", :graphql do
       GRAPHQL
     end
 
-    it "returns a list of users" do
-      user = create(:user, email: "test@test.com")
+    it 'returns a list of users' do
+      user = create(:user, email: 'test@test.com')
 
       result = execute query, as: build(:user)
 

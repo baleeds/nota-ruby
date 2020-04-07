@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CreateUser
   def initialize(email:, username:, display_name:, password: SecureRandom.base64(10), admin: false)
     @email = email
@@ -13,7 +15,7 @@ class CreateUser
     if user.save
       welcome_user(user)
     else
-      Result.failure("user creation error")
+      Result.failure('user creation error')
     end
   end
 

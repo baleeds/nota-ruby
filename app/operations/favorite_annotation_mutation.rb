@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class FavoriteAnnotationMutation < Types::BaseMutation
-  description "Favorites an annotation"
+  description 'Favorites an annotation'
 
   argument :annotation_id, ID, required: true, loads: Outputs::AnnotationType
 
@@ -12,9 +14,9 @@ class FavoriteAnnotationMutation < Types::BaseMutation
     favorite_annotation = UserAnnotationFavorite.new(user: current_user, annotation: input.annotation)
 
     if favorite_annotation.save
-      {success: true, errors: []}
+      { success: true, errors: [] }
     else
-      {success: false, errors: favorite_annotation.errors}
+      { success: false, errors: favorite_annotation.errors }
     end
   end
 end

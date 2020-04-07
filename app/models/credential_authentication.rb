@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CredentialAuthentication
   def initialize(email:, password:)
     @email = email
@@ -12,7 +14,7 @@ class CredentialAuthentication
         user: user
       )
     else
-      Result.failure(["Invalid email or password"])
+      Result.failure(['Invalid email or password'])
     end
   end
 

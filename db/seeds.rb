@@ -1,26 +1,27 @@
-require "factory_bot_rails"
-require "faker"
-require "csv"
+# frozen_string_literal: true
+
+require 'factory_bot_rails'
+require 'faker'
+require 'csv'
 
 ben = User.create(
-  email: "ben@gmail.com",
-  password: "Tester12",
-  username: "ben.leeds",
-  display_name: "Ben Leeds",
+  email: 'ben@gmail.com',
+  password: 'Tester12',
+  username: 'ben.leeds',
+  display_name: 'Ben Leeds',
   admin: true
 )
 
-erica= User.create(
-  email: "erica@gmail.com",
-  password: "Tester12",
-  username: "erica.leeds",
-  display_name: "Erica Leeds",
+erica = User.create(
+  email: 'erica@gmail.com',
+  password: 'Tester12',
+  username: 'erica.leeds',
+  display_name: 'Erica Leeds',
   admin: false
 )
 
-
 csv_text = File.read(Rails.root.join('db', 'assets', 't_web.csv'))
-csv = CSV.parse(csv_text, :headers => true, :encoding => 'ISO-8859-1')
+csv = CSV.parse(csv_text, headers: true, encoding: 'ISO-8859-1')
 csv.each do |row|
   t = Verse.new
   t.id = row['id']
@@ -31,7 +32,7 @@ csv.each do |row|
   t.save
 end
 
-verse = Verse.find("1001001");
+verse = Verse.find('1001001')
 
 FactoryBot.create_list(
   :annotation,
@@ -48,4 +49,3 @@ FactoryBot.create_list(
   verse: verse,
   user: erica
 )
-

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CreateResetPasswordTokens < ActiveRecord::Migration[6.0]
   def change
     create_table :reset_password_tokens do |t|

@@ -1,4 +1,6 @@
 #!/usr/bin/env ruby
+# frozen_string_literal: true
+
 require 'fileutils'
 
 include FileUtils
@@ -24,14 +26,14 @@ chdir APP_ROOT do
   # Verify that brew is installed
   which_brew = `which brew`
 
-  if ! which_brew.include? 'brew'
-    puts "!!! Homebrew was not found. Please install homebrew before setup."
+  unless which_brew.include? 'brew'
+    puts '!!! Homebrew was not found. Please install homebrew before setup.'
     exit
   end
 
   puts "\n== Installing System Dependencies =="
 
-  if ! system('brew ls --versions elasticsearch')
+  if !system('brew ls --versions elasticsearch')
     puts 'Installing "elasticsearch" via Homebrew ... '
     system 'brew install elasticsearch'
   else
@@ -50,9 +52,9 @@ chdir APP_ROOT do
   puts "The Rails Master Key can be found in the team 1Password as 'Librarian API Master Key'"
   config[:RAILS_MASTER_KEY] = ask('Rails Master Key?')
 
-  File.open("#{APP_ROOT}/.env", "w+") { |f|
-    config.each { |key, value| f.write("#{key}=#{value}\n")}
-  }
+  File.open("#{APP_ROOT}/.env", 'w+') do |f|
+    config.each { |key, value| f.write("#{key}=#{value}\n") }
+  end
 
   puts "\n== Installing dependencies =="
   system! 'gem install bundler --conservative'

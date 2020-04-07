@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class RefreshTokensMutation < Types::BaseMutation
   description <<~DESC
     When an access token expires this mutation should be hit with a valid
@@ -19,10 +21,10 @@ class RefreshTokensMutation < Types::BaseMutation
         user: result.user,
         access_token: result.access_token,
         refresh_token: result.refresh_token,
-        errors: [],
+        errors: []
       }
     else
-      {user: nil, access_token: nil, refresh_token: nil, errors: result.errors}
+      { user: nil, access_token: nil, refresh_token: nil, errors: result.errors }
     end
   end
 end

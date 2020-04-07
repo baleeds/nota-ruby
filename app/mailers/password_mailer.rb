@@ -1,9 +1,11 @@
+# frozen_string_literal: true
+
 class PasswordMailer < ApplicationMailer
   def reset_password(user:, token:)
     @user = user
     @token = token.body
     @date = Date.current
 
-    mail(to: @user.email, subject: "Reset Password - Nota")
+    mail(to: @user.email, subject: 'Reset Password - Nota')
   end
 end

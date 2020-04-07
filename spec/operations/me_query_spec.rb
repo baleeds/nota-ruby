@@ -1,7 +1,9 @@
-require "rails_helper"
+# frozen_string_literal: true
 
-describe "Me Query", :graphql do
-  describe "me" do
+require 'rails_helper'
+
+describe 'Me Query', :graphql do
+  describe 'me' do
     let(:query) do
       <<~'GRAPHQL'
         query {
@@ -12,7 +14,7 @@ describe "Me Query", :graphql do
       GRAPHQL
     end
 
-    it "gets the current user" do
+    it 'gets the current user' do
       user = create(:user)
 
       result = execute query, as: user

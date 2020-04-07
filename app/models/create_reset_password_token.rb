@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CreateResetPasswordToken
   def initialize(user)
     @user = user

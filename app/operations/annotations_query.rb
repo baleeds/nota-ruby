@@ -1,23 +1,20 @@
-class AnnotationsQuery < Types::BaseResolver
-  description "Gets all public annotations"
-  argument :verse_id, ID, required: true, loads: Outputs::VerseType
+# frozen_string_literal: true
 
-  # argument :sort_by,
-  #   Types::BookSortByType,
-  #   "The column to sort the results by",
-  #   default_value: :title,
-  #   required: false
-  # argument :sort_direction,
-  #   Types::SortDirectionType,
-  #   "The direction to sort the results",
-  #   default_value: :asc,
-  #   required: false
+# Returns annotations
+class AnnotationsQuery < Types::BaseResolver
+  description 'Gets all public annotations'
+  argument :verse_id, ID, required: false, loads: Outputs::VerseType
 
   type Outputs::AnnotationType.connection_type, null: false
 
   def resolve
-    annotations = Annotation.where(verse: input.verse)
-    annotations = annotations.where.not(user: current_user) if !current_user.guest?
+    annotations = Annotation.all
+    if input.to_h.key?('verse')
+      annotations = annotations.where(verse: input.verse)
+    end
+    unless current_user.guest?
+      annotations = annotations.where.not(user: current_user)
+    end
     annotations
   end
 end

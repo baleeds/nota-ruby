@@ -1,7 +1,9 @@
-require "rails_helper"
+# frozen_string_literal: true
 
-describe "Unsuspend User Mutation API", :graphql do
-  describe "unsuspendUser" do
+require 'rails_helper'
+
+describe 'Unsuspend User Mutation API', :graphql do
+  describe 'unsuspendUser' do
     let(:query) do
       <<~'GRAPHQL'
         mutation($input: UnsuspendUserInput!) {
@@ -14,14 +16,14 @@ describe "Unsuspend User Mutation API", :graphql do
       GRAPHQL
     end
 
-    it "unsuspends a user" do
+    it 'unsuspends a user' do
       acting_user = build(:user, :admin)
       user = create(:user, active: false)
 
       execute query, as: acting_user, variables: {
         input: {
-          userId: global_id(user, Outputs::UserType),
-        },
+          userId: global_id(user, Outputs::UserType)
+        }
       }
 
       expect(user.reload.active).to be(true)

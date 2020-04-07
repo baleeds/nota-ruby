@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Loaders
   class AssociationLoader < GraphQL::Batch::Loader
     def initialize(model, association_name)
@@ -9,7 +11,9 @@ module Loaders
       unless record.is_a?(model)
         raise TypeError, "#{model} loader can't load association for #{record.class}"
       end
-      return Promise.resolve(read_association(record)) if association_loaded?(record)
+      if association_loaded?(record)
+        return Promise.resolve(read_association(record))
+      end
 
       super
     end

@@ -1,13 +1,15 @@
+# frozen_string_literal: true
+
 Sidekiq.configure_server do |config|
   config.redis = {
-    url: ENV.fetch("REDIS_URL") { "redis://localhost" },
-    namespace: "sidekiq_nota_#{Rails.env}",
+    url: ENV.fetch('REDIS_URL') { 'redis://localhost' },
+    namespace: "sidekiq_nota_#{Rails.env}"
   }
 end
 
 Sidekiq.configure_client do |config|
   config.redis = {
-    url: ENV.fetch("REDIS_URL") { "redis://localhost" },
-    namespace: "sidekiq_nota_#{Rails.env}",
+    url: ENV.fetch('REDIS_URL') { 'redis://localhost' },
+    namespace: "sidekiq_nota_#{Rails.env}"
   }
 end

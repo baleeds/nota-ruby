@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class MyAnnotationsQuery < Types::BaseResolver
-  description "Gets all of my annotations"
+  description 'Gets all of my annotations'
 
   type Outputs::AnnotationType.connection_type, null: false
 

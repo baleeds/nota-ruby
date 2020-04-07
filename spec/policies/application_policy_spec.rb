@@ -1,8 +1,10 @@
-require "rails_helper"
+# frozen_string_literal: true
+
+require 'rails_helper'
 
 RSpec.describe ApplicationPolicy do
-  describe "#logged_in?" do
-    it "returns true for a user" do
+  describe '#logged_in?' do
+    it 'returns true for a user' do
       user = User.new
       policy = described_class.new(user, nil)
 
@@ -11,7 +13,7 @@ RSpec.describe ApplicationPolicy do
       expect(logged_in).to be(true)
     end
 
-    it "returns false for a guest" do
+    it 'returns false for a guest' do
       user = Guest.new
       policy = described_class.new(user, nil)
 
@@ -21,8 +23,8 @@ RSpec.describe ApplicationPolicy do
     end
   end
 
-  describe "#admin?" do
-    it "returns true for an admin user" do
+  describe '#admin?' do
+    it 'returns true for an admin user' do
       user = build_stubbed(:user, :admin)
       policy = described_class.new(user, nil)
 
@@ -31,7 +33,7 @@ RSpec.describe ApplicationPolicy do
       expect(admin).to be(true)
     end
 
-    it "returns false for a regular user" do
+    it 'returns false for a regular user' do
       user = build_stubbed(:user, admin: false)
       policy = described_class.new(user, nil)
 

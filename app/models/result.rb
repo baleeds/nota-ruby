@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Result
   def self.success(fields = {})
     result = create_result(fields.keys)

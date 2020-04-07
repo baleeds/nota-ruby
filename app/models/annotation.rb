@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 class Annotation < ApplicationRecord
   include Orderable
-  
+
   validates :text, presence: true
 
   has_many :user_annotation_favorites

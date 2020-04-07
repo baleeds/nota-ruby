@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class AccessToken
-  ALGORITHM = "HS256".freeze
+  ALGORITHM = 'HS256'
   SECRET = Rails.application.credentials[:jwt_access_secret]
 
   def self.issue(user)
@@ -8,7 +10,7 @@ class AccessToken
 
   def self.decode(token)
     decoded_token = JWT.decode(token, SECRET, algorithm: ALGORITHM).first
-    new(email: decoded_token["email"])
+    new(email: decoded_token['email'])
   rescue JWT::DecodeError
     new(email: nil)
   end
@@ -33,7 +35,7 @@ class AccessToken
     def payload(user)
       {
         email: user.email,
-        exp: expiration,
+        exp: expiration
       }
     end
 

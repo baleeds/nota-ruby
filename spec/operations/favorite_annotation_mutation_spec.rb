@@ -1,6 +1,8 @@
-require "rails_helper"
+# frozen_string_literal: true
 
-describe "Favorite annotation mutation", :graphql do
+require 'rails_helper'
+
+describe 'Favorite annotation mutation', :graphql do
   let(:query) do
     <<~'GRAPHQL'
       mutation($input: FavoriteAnnotationInput!) {
@@ -15,15 +17,15 @@ describe "Favorite annotation mutation", :graphql do
     GRAPHQL
   end
 
-  it "succeeds with valid input" do
+  it 'succeeds with valid input' do
     annotation = create(:annotation)
     user = create(:user)
 
     input = {
-      annotationId: global_id(annotation, Outputs::AnnotationType),
+      annotationId: global_id(annotation, Outputs::AnnotationType)
     }
 
-    result = execute query, as: user, variables: {input: input}
+    result = execute query, as: user, variables: { input: input }
 
     success = result[:data][:favoriteAnnotation][:success]
     expect(success).to be(true)

@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class CreateAnnotationMutation < Types::BaseMutation
-  description "Create an annotation"
+  description 'Create an annotation'
 
   argument :annotation_input, Inputs::Annotation, required: true
 
@@ -13,9 +15,9 @@ class CreateAnnotationMutation < Types::BaseMutation
     annotation.user = current_user
 
     if annotation.save
-      {annotation: annotation, errors: []}
+      { annotation: annotation, errors: [] }
     else
-      {annotation: nil, errors: annotation.errors}
+      { annotation: nil, errors: annotation.errors }
     end
   end
 end

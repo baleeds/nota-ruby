@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module SearchHelpers
   def reindex_search(resource)
     resource = get_class(resource)

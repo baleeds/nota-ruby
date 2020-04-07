@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class RefreshToken
-  ALGORITHM = "HS256".freeze
+  ALGORITHM = 'HS256'
   SECRET = Rails.application.credentials[:jwt_refresh_secret]
 
   def self.issue(user)
@@ -8,7 +10,7 @@ class RefreshToken
 
   def self.decode(token)
     decoded_token = JWT.decode(token, SECRET, algorithm: ALGORITHM).first
-    new(email: decoded_token["email"], version: decoded_token["version"])
+    new(email: decoded_token['email'], version: decoded_token['version'])
   rescue JWT::DecodeError
     new(email: nil, version: 0)
   end
@@ -35,7 +37,7 @@ class RefreshToken
       {
         email: user.email,
         exp: expiration,
-        version: user.token_version,
+        version: user.token_version
       }
     end
 

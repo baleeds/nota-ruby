@@ -1,8 +1,10 @@
-require "rails_helper"
+# frozen_string_literal: true
+
+require 'rails_helper'
 
 RSpec.describe Guest, type: :model do
-  describe "#guest?" do
-    it "returns true" do
+  describe '#guest?' do
+    it 'returns true' do
       user = Guest.new
 
       result = user.guest?
@@ -11,8 +13,8 @@ RSpec.describe Guest, type: :model do
     end
   end
 
-  describe "#admin?" do
-    it "returns false" do
+  describe '#admin?' do
+    it 'returns false' do
       user = Guest.new
 
       result = user.admin?

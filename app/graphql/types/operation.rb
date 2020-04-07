@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Types
   module Operation
     extend ActiveSupport::Concern
@@ -22,8 +24,7 @@ module Types
       end
     end
 
-    def resolve
-    end
+    def resolve; end
 
     def authorize(record = nil)
       return if can_access?(current_user, record)
