@@ -3,7 +3,7 @@
 class NotaSchema < GraphQL::Schema
   use GraphQL::Batch
 
-  default_max_page_size 200
+  default_max_page_size 30
 
   mutation(Types::MutationType)
   query(Types::QueryType)
@@ -35,11 +35,17 @@ class NotaSchema < GraphQL::Schema
     end
 
     def authenticated_error
-      execution_error('You must be authenticated to perform this action', 'UNAUTHENTICATED')
+      execution_error(
+        'You must be authenticated to perform this action',
+        'UNAUTHENTICATED'
+      )
     end
 
     def authorized_error
-      execution_error("You don't have permission to perform this action", 'UNAUTHORIZED')
+      execution_error(
+        "You don't have permission to perform this action",
+        'UNAUTHORIZED'
+      )
     end
 
     private
