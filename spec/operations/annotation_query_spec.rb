@@ -40,7 +40,6 @@ describe 'Annotation query', :graphql do
       user = create(:user)
       annotation = create(:annotation)
       annotation_id = global_id(annotation, Outputs::AnnotationType)
-      favoriteAnnotation = create(:user_annotation_favorite, user: user, annotation: annotation)
 
       result = execute query, as: user, variables: {
         annotationId: annotation_id
