@@ -39,6 +39,7 @@ describe 'Annotation query', :graphql do
     it 'is true when favorited by current user' do
       user = create(:user)
       annotation = create(:annotation)
+      create(:user_annotation_favorite, user_id: user.id, annotation_id: annotation.id)
       annotation_id = global_id(annotation, Outputs::AnnotationType)
 
       result = execute query, as: user, variables: {
