@@ -4,6 +4,7 @@ class Annotation < ApplicationRecord
   include Orderable
 
   validates :text, presence: true
+  validates :excerpt, presence: true, length: { maximum: 255, minimum: 10 }
 
   has_many :user_annotation_favorites
   has_many :favorited_by, through: :user_annotation_favorites, source: :user, dependent: :destroy

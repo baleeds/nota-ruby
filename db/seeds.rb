@@ -38,6 +38,7 @@ FactoryBot.create_list(
   :annotation,
   10,
   text: Faker::Lorem.paragraph(sentence_count: 10),
+  excerpt: Faker::Lorem.paragraph(sentence_count: 1),
   verse: verse,
   user: ben
 )
@@ -46,6 +47,7 @@ FactoryBot.create_list(
   :annotation,
   50,
   text: Faker::Lorem.paragraph(sentence_count: 20),
+  excerpt: Faker::Lorem.paragraph(sentence_count: 1),
   verse: verse,
   user: erica
 )

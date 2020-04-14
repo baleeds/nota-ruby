@@ -3,6 +3,7 @@
 FactoryBot.define do
   factory :annotation do
     text { Faker::Lorem.paragraph(sentence_count: 10) }
+    excerpt { Faker::Lorem.paragraph(sentence_count: 1) }
     user
     verse
   end

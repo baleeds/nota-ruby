@@ -6,6 +6,7 @@ module Outputs
 
     global_id_field :id
     field :text, String, null: false
+    field :excerpt, String, null: false
     field :user, Outputs::UserType, null: false
     field :favorited, Boolean, null: false
 
