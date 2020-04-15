@@ -14,9 +14,9 @@ RSpec.describe 'Ordering model', type: :model do
   describe '.order_by' do
     it 'orders by a scope' do
       verse = create(:verse, id: '1001001')
-      second_record = create(:annotation, text: 'b', verse: verse)
-      third_record = create(:annotation, text: 'c', verse: verse)
-      first_record = create(:annotation, text: 'a', verse: verse)
+      second_record = create(:annotation, text: 'b123456789', verse: verse)
+      third_record = create(:annotation, text: 'c123456789', verse: verse)
+      first_record = create(:annotation, text: 'a123456789', verse: verse)
 
       ordered = Annotation.order_by(:text, :asc)
 

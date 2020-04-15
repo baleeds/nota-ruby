@@ -12,9 +12,26 @@ class Annotation < ApplicationRecord
   belongs_to :user
   belongs_to :verse
 
+  before_validation :sanitize_text
+  before_validation :build_excerpt
+
   scope :favorite_for_user, ->(user) { joins(:user_annotation_favorites).where("user_annotation_favorites.user_id = #{user.id}") }
 
   def favorited?(user)
     user_annotation_favorites.any? { |user_annotation_favorite| user_annotation_favorite.user_id == user.id }
+  end
+
+  private
+
+  def sanitize_text
+    self.text = ActionController::Base.helpers.sanitize(text)
+  end
+
+  def build_excerpt
+    sanitized_text = ActionController::Base.helpers.sanitize(text, tags: [])
+    excerpt = ActionController::Base.helpers.truncate(
+      sanitized_text, length: 240, separator: ' '
+    )
+    self.excerpt = excerpt
   end
 end

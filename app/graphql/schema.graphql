@@ -15,6 +15,7 @@ type Annotation implements ActiveRecord {
   The date and time when then record was created
   """
   createdAt: ISO8601DateTime!
+  excerpt: String!
   favorited: Boolean!
   id: ID!
   text: String!
@@ -106,8 +107,10 @@ input CreateUserInput {
   A unique identifier for the client performing the mutation.
   """
   clientMutationId: String
+  displayName: String!
   email: String!
   isAdmin: Boolean!
+  username: String!
 }
 
 """
@@ -315,7 +318,8 @@ type Query {
     Returns the last _n_ elements from the list.
     """
     last: Int
-    verseId: ID!
+    userId: ID
+    verseId: ID
   ): AnnotationConnection!
 
   """
@@ -613,6 +617,7 @@ type User implements ActiveRecord {
   The date and time when then record was created
   """
   createdAt: ISO8601DateTime!
+  displayName: String!
   email: String!
   id: ID!
   isActive: Boolean!
@@ -622,6 +627,7 @@ type User implements ActiveRecord {
   The date and time the record was last updated
   """
   updatedAt: ISO8601DateTime!
+  username: String!
 }
 
 """
