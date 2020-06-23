@@ -22,7 +22,8 @@ erica = User.create(
 
 csv_text = File.read(Rails.root.join('db', 'assets', 't_web.csv'))
 csv = CSV.parse(csv_text, headers: true, encoding: 'ISO-8859-1')
-csv.each do |row|
+# Only take the first 100 for testing purposes
+csv[0..100].each do |row|
   t = Verse.new
   t.id = row['id']
   t.book_number = row['b']
