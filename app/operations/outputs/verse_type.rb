@@ -7,6 +7,11 @@ module Outputs
     global_id_field :id
     field :number_of_annotations, Integer, null: true
     field :number_of_my_annotations, Integer, null: true
+    field :annotations, Outputs::AnnotationType.connection_type, null: false
+
+    def annotations
+      Loaders::AssociationLoader.for(Verse, :annotations).load(@object)
+    end
 
     def number_of_annotations
       @object.number_of_annotations

@@ -7,6 +7,7 @@ class User < ApplicationRecord
   validates :display_name, presence: true
 
   has_many :annotations
+  has_many :user_annotation_favorite
 
   has_secure_password
 
