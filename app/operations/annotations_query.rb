@@ -12,6 +12,7 @@ class AnnotationsQuery < Types::BaseResolver
     annotations = Annotation.all
     annotations = annotations.where(verse: input.verse) if input.verse.present?
     annotations = filter_by_user(annotations)
+    annotations = annotations.order_by(:created_at, :desc)
 
     annotations
   end
