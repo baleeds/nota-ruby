@@ -22,6 +22,8 @@ module Outputs
     # TODO: this might be really nasty.  Pretty sure this loads all favorites and loops over them to
     # determine if the current user is in the list...
     def favorited
+      pp @object
+      
       Loaders::AssociationLoader.for(Annotation, :user_annotation_favorites).load(@object).then do
         @object.favorited?(context[:current_user])
       end

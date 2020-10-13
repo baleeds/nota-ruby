@@ -9,5 +9,6 @@ module Types
     field :annotations, resolver: AnnotationsQuery
     field :my_annotations, resolver: MyAnnotationsQuery
     field :verse, resolver: VerseQuery
+    field :favorite_annotations, resolver: FavoriteAnnotationsQuery
   end
 end

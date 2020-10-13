@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:dependabot" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:dependabot" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:bundler" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="2baa6b55-5694-46fc-8426-b3d3b935bf66" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/app/graphql/types/query_type.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/graphql/types/query_type.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/annotation.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/annotation.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/operations/annotations_query.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/operations/annotations_query.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/operations/outputs/annotation_type.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/operations/outputs/annotation_type.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/database.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config/database.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plan.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/plan.graphql" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Ruby File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1h1irZia3HioZrOoVvxENC5IATr" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="postgresql" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.completion" />
+  </component>
+  <component name="RunManager" selected="Rails.Development: nota-ruby">
+    <configuration name="Development: nota-ruby" type="RailsRunConfigurationType" factoryName="Rails">
+      <module name="nota-ruby" />
+      <predefined_log_file enabled="true" id="RUBY_RAILS_SERVER" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$MODULE_DIR$" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
+      <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="SCRIPT_ARGS" VALUE="" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="PORT" VALUE="3000" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="IP" VALUE="127.0.0.1" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="DUMMY_APP" VALUE="test/dummy" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="RAILS_SERVER_TYPE" VALUE="Default" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="ENVIRONMENT_TYPE" VALUE="development" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="LAUNCH_JS" VALUE="false" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Production: nota-ruby" type="RailsRunConfigurationType" factoryName="Rails">
+      <module name="nota-ruby" />
+      <predefined_log_file enabled="true" id="RUBY_RAILS_SERVER" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$MODULE_DIR$" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
+      <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="SCRIPT_ARGS" VALUE="" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="PORT" VALUE="3000" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="IP" VALUE="127.0.0.1" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="DUMMY_APP" VALUE="test/dummy" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="RAILS_SERVER_TYPE" VALUE="Default" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="ENVIRONMENT_TYPE" VALUE="production" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="LAUNCH_JS" VALUE="false" />
+      <method v="2" />
+    </configuration>
+    <configuration name="spec: nota-ruby" type="RakeRunConfigurationType" factoryName="Rake">
+      <module name="nota-ruby" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$MODULE_DIR$" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
+      <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_NAME" VALUE="spec" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_ARGS" VALUE="" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_ATTACHED_TEST_FRAMEWORKS" VALUE=":rspec " />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_TRACE" VALUE="false" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_DRYRUN" VALUE="false" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_PREREQS" VALUE="false" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_TESTOPTS" VALUE="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="test: nota-ruby" type="RakeRunConfigurationType" factoryName="Rake">
+      <module name="nota-ruby" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$MODULE_DIR$" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
+      <envs>
+        <env name="RAILS_ENV" value="test" />
+      </envs>
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
+      <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_NAME" VALUE="test" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_ARGS" VALUE="" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_ATTACHED_TEST_FRAMEWORKS" VALUE=":test_unit " />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_TRACE" VALUE="false" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_DRYRUN" VALUE="false" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_PREREQS" VALUE="false" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_TESTOPTS" VALUE="" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SpringUtil" SPRING_PRE_LOADER_OPTION="true" RAKE_SPRING_PRE_LOADER_OPTION="true" RAILS_SPRING_PRE_LOADER_OPTION="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="2baa6b55-5694-46fc-8426-b3d3b935bf66" name="Default Changelist" comment="" />
+      <created>1599185201372</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1599185201372</updated>
+      <workItem from="1599185203072" duration="440000" />
+      <workItem from="1599185681095" duration="211000" />
+      <workItem from="1599185913108" duration="1277000" />
+      <workItem from="1599187267582" duration="2149000" />
+      <workItem from="1599189456878" duration="190000" />
+      <workItem from="1599189726337" duration="1997000" />
+      <workItem from="1599329129477" duration="2774000" />
+      <workItem from="1599332981875" duration="105000" />
+      <workItem from="1599333115804" duration="3138000" />
+      <workItem from="1602552873243" duration="2100000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.graphql" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="394" y="91" width="1089" height="713" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1599333371870">
+      <screen x="66" y="0" width="1470" height="864" />
+    </state>
+    <state x="480" y="114" key="#com.intellij.execution.impl.EditConfigurationsDialog/1986.-368.1014.1920/66.0.1854.1080@66.0.1854.1080" timestamp="1599223225497" />
+    <state x="394" y="91" width="1089" height="713" key="#com.intellij.execution.impl.EditConfigurationsDialog/66.0.1470.864@66.0.1470.864" timestamp="1599333371870" />
+    <state x="555" y="302" key="#com.intellij.ide.actions.ChooseComponentsToExportDialog" timestamp="1599185645913">
+      <screen x="66" y="0" width="1470" height="864" />
+    </state>
+    <state x="555" y="302" key="#com.intellij.ide.actions.ChooseComponentsToExportDialog/66.0.1470.864@66.0.1470.864" timestamp="1599185645913" />
+    <state x="629" y="275" key="#com.intellij.ide.actions.DebugLogConfigureAction" timestamp="1599189433132">
+      <screen x="66" y="0" width="1470" height="864" />
+    </state>
+    <state x="629" y="275" key="#com.intellij.ide.actions.DebugLogConfigureAction/66.0.1470.864@66.0.1470.864" timestamp="1599189433132" />
+    <state x="582" y="174" key="FileChooserDialogImpl" timestamp="1599185627405">
+      <screen x="66" y="0" width="1470" height="864" />
+    </state>
+    <state x="582" y="174" key="FileChooserDialogImpl/66.0.1470.864@66.0.1470.864" timestamp="1599185627405" />
+    <state width="978" height="192" key="GridCell.Tab.0.bottom" timestamp="1599334809610">
+      <screen x="66" y="0" width="1470" height="864" />
+    </state>
+    <state width="1811" height="308" key="GridCell.Tab.0.bottom/1986.-368.1014.1920/66.0.1854.1080@66.0.1854.1080" timestamp="1599223492469" />
+    <state width="978" height="192" key="GridCell.Tab.0.bottom/66.0.1470.864@66.0.1470.864" timestamp="1599334809610" />
+    <state width="978" height="192" key="GridCell.Tab.0.center" timestamp="1599334809609">
+      <screen x="66" y="0" width="1470" height="864" />
+    </state>
+    <state width="1811" height="308" key="GridCell.Tab.0.center/1986.-368.1014.1920/66.0.1854.1080@66.0.1854.1080" timestamp="1599223492469" />
+    <state width="978" height="192" key="GridCell.Tab.0.center/66.0.1470.864@66.0.1470.864" timestamp="1599334809609" />
+    <state width="978" height="192" key="GridCell.Tab.0.left" timestamp="1599334809609">
+      <screen x="66" y="0" width="1470" height="864" />
+    </state>
+    <state width="1811" height="308" key="GridCell.Tab.0.left/1986.-368.1014.1920/66.0.1854.1080@66.0.1854.1080" timestamp="1599223492469" />
+    <state width="978" height="192" key="GridCell.Tab.0.left/66.0.1470.864@66.0.1470.864" timestamp="1599334809609" />
+    <state width="978" height="192" key="GridCell.Tab.0.right" timestamp="1599334809610">
+      <screen x="66" y="0" width="1470" height="864" />
+    </state>
+    <state width="1811" height="308" key="GridCell.Tab.0.right/1986.-368.1014.1920/66.0.1854.1080@66.0.1854.1080" timestamp="1599223492469" />
+    <state width="978" height="192" key="GridCell.Tab.0.right/66.0.1470.864@66.0.1470.864" timestamp="1599334809610" />
+    <state width="189" height="457" key="HiddenNamespacesPopup" timestamp="1599333165349">
+      <screen x="66" y="0" width="1470" height="864" />
+    </state>
+    <state width="189" height="457" key="HiddenNamespacesPopup/66.0.1470.864@66.0.1470.864" timestamp="1599333165349" />
+    <state x="322" y="92" width="1000" height="707" key="SettingsEditor" timestamp="1599334565712">
+      <screen x="66" y="0" width="1470" height="864" />
+    </state>
+    <state x="389" y="115" key="SettingsEditor/1986.-368.1014.1920/66.0.1854.1080@66.0.1854.1080" timestamp="1599223532142" />
+    <state x="322" y="92" width="1000" height="707" key="SettingsEditor/66.0.1470.864@66.0.1470.864" timestamp="1599334565712" />
+    <state x="523" y="174" width="540" height="524" key="StructurePopup" timestamp="1599333838855">
+      <screen x="66" y="0" width="1470" height="864" />
+    </state>
+    <state x="523" y="174" width="540" height="524" key="StructurePopup/66.0.1470.864@66.0.1470.864" timestamp="1599333838855" />
+    <state x="512" y="31" width="578" height="801" key="find.popup" timestamp="1599335264820">
+      <screen x="66" y="0" width="1470" height="864" />
+    </state>
+    <state x="512" y="31" width="578" height="801" key="find.popup/66.0.1470.864@66.0.1470.864" timestamp="1599335264820" />
+    <state x="464" y="181" width="672" height="678" key="search.everywhere.popup" timestamp="1602554490154">
+      <screen x="66" y="0" width="1470" height="864" />
+    </state>
+    <state x="464" y="181" width="672" height="678" key="search.everywhere.popup/66.0.1470.864@66.0.1470.864" timestamp="1602554490154" />
+  </component>
+</project>

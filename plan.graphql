@@ -1,7 +1,8 @@
-fragment AnnotationDetails on Annotaion {
+fragment AnnotationDetails on Annotation {
   id
   text
   favorited
+  numberOfFavorites
   createdAt
   user {
     id
