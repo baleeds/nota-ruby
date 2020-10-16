@@ -114,6 +114,6 @@ Rails.application.configure do
   # config.active_record.database_resolver = ActiveRecord::Middleware::DatabaseSelector::Resolver
   # config.active_record.database_resolver_context = ActiveRecord::Middleware::DatabaseSelector::Resolver::Session
 
-  config.hosts << 'api.books.level.tech'
-  config.frontend_host = 'books.level.tech'
+  config.hosts << 'http://67.205.165.157/'
+  config.frontend_host = 'http://67.205.165.157/'
 end
