@@ -32,14 +32,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2baa6b55-5694-46fc-8426-b3d3b935bf66" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/app/graphql/types/query_type.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/graphql/types/query_type.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/annotation.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/annotation.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/operations/annotations_query.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/operations/annotations_query.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/operations/outputs/annotation_type.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/operations/outputs/annotation_type.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/database.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config/database.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plan.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/plan.graphql" afterDir="false" />
-    </list>
+    <list default="true" id="2baa6b55-5694-46fc-8426-b3d3b935bf66" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -164,7 +157,7 @@
       <workItem from="1599329129477" duration="2774000" />
       <workItem from="1599332981875" duration="105000" />
       <workItem from="1599333115804" duration="3138000" />
-      <workItem from="1602552873243" duration="2100000" />
+      <workItem from="1602552873243" duration="2642000" />
     </task>
     <servers />
   </component>

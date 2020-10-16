@@ -10,6 +10,7 @@ gem 'bootsnap', '>= 1.4.2', require: false
 gem 'dotenv-rails'
 gem 'graphql-batch'
 gem 'jwt'
+gem "passenger", ">= 5.0.25", require: "phusion_passenger/rack_handler"
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 3.12'
 gem 'rack-cors'
