@@ -115,5 +115,6 @@ Rails.application.configure do
   # config.active_record.database_resolver_context = ActiveRecord::Middleware::DatabaseSelector::Resolver::Session
 
   config.hosts << '67.205.165.157'
+  config.hosts << '127.0.0.1'
   config.frontend_host = '67.205.165.157'
 end
