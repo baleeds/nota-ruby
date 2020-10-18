@@ -5,17 +5,17 @@ require 'faker'
 require 'csv'
 
 ben = User.create(
-  email: 'ben@gmail.com',
+  email: 'b.a.leeds@gmail.com',
   password: 'Tester12',
-  username: 'ben.leeds',
+  username: 'ben',
   display_name: 'Ben Leeds',
   admin: true
 )
 
 erica = User.create(
-  email: 'erica@gmail.com',
+  email: 'ericapleeds@gmail.com',
   password: 'Tester12',
-  username: 'erica.leeds',
+  username: 'erica',
   display_name: 'Erica Leeds',
   admin: false
 )
