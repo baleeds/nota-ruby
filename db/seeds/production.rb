@@ -1,3 +1,5 @@
+require 'csv'
+
 ben = User.create(
   email: 'b.a.leeds@gmail.com',
   password: 'Tester12',
