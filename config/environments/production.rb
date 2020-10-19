@@ -52,7 +52,7 @@ Rails.application.configure do
   # config.cache_store = :mem_cache_store
 
   # Use a real queuing backend for Active Job (and separate queues per environment).
-  config.active_job.queue_adapter = :sidekiq
+  # config.active_job.queue_adapter = :sidekiq
   # config.active_job.queue_name_prefix = "librarian_production"
 
   config.action_mailer.perform_caching = false
@@ -63,7 +63,6 @@ Rails.application.configure do
     address: 'smtp.mailgun.org',
     domain: 'mail.level.tech',
     port: '587',
-    authentication: :plain
   }
 
   # Ignore bad email addresses and do not raise email delivery errors.
@@ -114,6 +113,6 @@ Rails.application.configure do
   # config.active_record.database_resolver = ActiveRecord::Middleware::DatabaseSelector::Resolver
   # config.active_record.database_resolver_context = ActiveRecord::Middleware::DatabaseSelector::Resolver::Session
 
-  config.hosts << 'http://67.205.165.157/'
-  config.frontend_host = 'http://67.205.165.157/'
+  config.hosts << '.biblenota.com'
+  config.frontend_host = 'biblenota.com'
 end
