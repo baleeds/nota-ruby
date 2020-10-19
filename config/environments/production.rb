@@ -61,7 +61,7 @@ Rails.application.configure do
     user_name: Rails.application.credentials[:mail_username],
     password: Rails.application.credentials[:mail_password],
     address: 'smtp.mailgun.org',
-    domain: 'mail.level.tech',
+    domain: 'mail.biblenota.com',
     port: '587',
   }
 
