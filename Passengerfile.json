@@ -1,6 +1,0 @@
-{
-  "environment": "production",
-  "port": 4000,
-  "daemonize": true,
-  "user": "nota"
-}

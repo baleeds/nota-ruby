@@ -32,7 +32,17 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2baa6b55-5694-46fc-8426-b3d3b935bf66" name="Default Changelist" comment="" />
+    <list default="true" id="2baa6b55-5694-46fc-8426-b3d3b935bf66" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gemfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Passengerfile.json" beforeDir="false" afterPath="$PROJECT_DIR$/Passengerfile.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.debug.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/entrypoint.sh" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -158,6 +168,7 @@
       <workItem from="1599332981875" duration="105000" />
       <workItem from="1599333115804" duration="3138000" />
       <workItem from="1602552873243" duration="2642000" />
+      <workItem from="1603245509842" duration="965000" />
     </task>
     <servers />
   </component>
@@ -165,6 +176,7 @@
     <option name="version" value="3" />
   </component>
   <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.env" />
     <option featureType="com.intellij.fileTypeFactory" implementationName="*.graphql" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -177,6 +189,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="394" y="91" width="1089" height="713" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1599333371870">
@@ -233,9 +246,9 @@
       <screen x="66" y="0" width="1470" height="864" />
     </state>
     <state x="512" y="31" width="578" height="801" key="find.popup/66.0.1470.864@66.0.1470.864" timestamp="1599335264820" />
-    <state x="464" y="181" width="672" height="678" key="search.everywhere.popup" timestamp="1602554490154">
+    <state x="464" y="181" width="672" height="678" key="search.everywhere.popup" timestamp="1603245739514">
       <screen x="66" y="0" width="1470" height="864" />
     </state>
-    <state x="464" y="181" width="672" height="678" key="search.everywhere.popup/66.0.1470.864@66.0.1470.864" timestamp="1602554490154" />
+    <state x="464" y="181" width="672" height="678" key="search.everywhere.popup/66.0.1470.864@66.0.1470.864" timestamp="1603245739514" />
   </component>
 </project>
